@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #d5f1cf;
+            background-image: url(kathakali-dance.webp);
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
+
+        }
+        .header {
+            background-color: #ef941b;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+        .header a:hover {
+            background-color: #ecdd9e;
+            border-radius: 4px;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        form {
+            background-color: #f1bd30;
+            
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        h1 {
+            color: rgb(255, 255, 255);
+            font-size: 40px;
+            /* text-align: center; */
+            padding: 10px;
+            border-radius: 5px;
+            margin:  0 ;
+            background-color: rgba(0, 0, 0, 0.5);
+
+        }
+        .subheading {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.5);
+
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="email"], input[type="number"], input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 0 0 15px;
+            border: 1px solid #080606;
+            border-radius: 5px;
+            background-color: rgb(255, 255, 255);
+        }
+        input[type="submit"] {
+            background-color: rgb(255, 0, 0);
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #007f00;
+        }
+        .footer {
+            background-color: #0c0a0a;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="home1.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="home1.html">Contact Us</a>
+        <a href="help.html">Help</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Don't Worry, We Can Fix It</h1>
+        <p class="subheading">Please provide the necessary details to recover your account.</p>
+        <form action="action.html" method="post">
+            <label for="username" style="color: white;">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <label for="email" style="color: white;">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <label for="mobile" style="color: white;">Mobile</label>
+            <input type="number" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+            <label for="otp" style="color: white;">Enter the OTP number</label>
+            <input type="number" id="otp" name="otp" placeholder="Enter OTP">
+            <input type="submit" value="Done">
+        </form>
+        <hr>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Kerala Tourism. All Rights Reserved.</p>
+    </div>
+</body>
+</html>

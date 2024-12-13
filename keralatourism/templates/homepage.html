@@ -1,0 +1,350 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Tourism</title>
+    <style>
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ffffff;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ddd7d7;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #094227;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        header img {
+            height: 80px;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+        header h1 {
+            text-align: center;
+            margin: 0;
+        }
+        header nav {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        header nav a {
+            color: white;
+            margin: 0 1px;
+            margin-right: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        header nav a:hover {
+            background-color: #63776a;
+        }
+       header nav .news{
+        color: red;
+       }
+       header nav .news:hover{
+        color: #ebc874;
+       }
+        header nav .login {
+            color: yellow;
+        }
+        header nav .login:hover {
+            background-color: #909f75;
+        }
+        .main {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+            padding-top: 120px; 
+        }
+        .section {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+        
+        .section img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .section h2 {
+            color: #007b5e;
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        
+        .service {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #007b5e;
+            color: white;
+            border-radius: 10px;
+            transition: transform .2s;
+
+        }
+        .service:hover{
+            transform: scale(1.05);
+        }
+        .service h3 {
+            margin-top: 0;
+        }
+        .a1 {
+            text-decoration: none;
+            color: white;
+        }
+        footer {
+            background-color: #032019;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer-content .social-icons a {
+            margin: 0 10px;
+            color: white;
+            font-size: 25px;
+        }
+        .gallery {
+            display: flex;
+            gap: 30px;
+        }
+        .gallery-item {
+            flex: 1 1 calc(33.333% - 20px);
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: black;
+            height: 200px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: flex;
+            
+        }
+        .gallery-item:hover {
+            box-shadow: black;
+        }
+        .f{
+            color: #556e07;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/gods.jpg' %}" alt="God's Own Country">
+        <h1>Kerala Tourism Experience Kerala</h1>
+        <nav>
+            <a href="{% url 'district' %}">Districts</a>
+            <a href="festivals.html">Festivals</a>
+            <a href="attractions.html">Attractions</a>
+            <a href="#about">About Us</a>
+            <a href="whatsnew.html" class="news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="login.html" class="login">Login</a>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="section">
+            <center>
+                <h2>Welcome to God's Own Country</h2>
+                <p>Experience the natural beauty and rich cultural heritage of Kerala, God's Own Country.</p>
+            </center>
+            <img src="AJT_8848-Edit.jpg" alt="Kerala Scenery">
+        </div>
+        <div class="section">
+            <h2>About Kerala</h2>
+            <p><b>Kerala</b>, located on the southwestern coast of India, is renowned for its stunning natural beauty and vibrant cultural heritage. Known as <strong>"God's Own Country,"</strong> this coastal state is characterized by its picturesque backwaters, lush green hill stations, and pristine beaches. Kerala's unique geographical features, including a network of serene canals and sprawling coconut groves, contribute to its reputation as a top tourist destination. The state boasts a rich history influenced by various cultures and traditions, reflected in its colorful festivals, historic temples, and distinctive art forms. Kerala is also celebrated for its Ayurvedic treatments, which attract visitors seeking holistic wellness. With its harmonious blend of natural splendor and cultural richness, Kerala offers an unforgettable experience for travelers and locals alike.</p>
+        </div>
+        <div class="section services">
+            <div class="service">
+                <a class="a1" href="houseboat.html">
+                    <h3>Houseboats</h3>
+                    <p>Enjoy a serene backwater cruise in a traditional houseboat.</p>
+                </a>
+            </div>
+            <div class="service">
+                <a class="a1" href="ayurvedha.html">
+                    <h3>Ayurveda</h3>
+                    <p>Rejuvenate with authentic Ayurvedic treatments and therapies.</p>
+                </a>
+            </div>
+            <div class="service">
+                <a class="a1" href="beaches.html">
+                    <h3>Beaches</h3>
+                    <p>Relax on the pristine beaches of Kerala with golden sands and clear waters.</p>
+                </a>
+            </div>
+            <div class="service">
+                <a class="a1" href="wildlife.html">
+                    <h3>Wildlife</h3>
+                    <p>Explore the rich wildlife and natural reserves of Kerala.</p>
+                </a>
+            </div>
+            <div class="service">
+                <a class="a1" href="hillstation.html">
+                    <h3>Hill Stations</h3>
+                    <p>Visit the picturesque hill stations with lush greenery and pleasant climate.</p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <img style="width: fit-content; height:fit-content;" src="92242.jpg" alt="Kerala Sunset">
+        </div>
+        <div class="section">
+            <h2>Geographical Features of Kerala</h2>
+<p><strong>Kerala</strong>, located on the southwestern coast of India, is renowned for its unique and diverse geographical features.Kerala covers an area of approximately 38,863 square kilometers (15,005 square miles). It is a relatively small state compared to other Indian states but is renowned for its rich natural resources and scenic beauty. </p>        
+        
+
+    <h3 class="f">Forest's</h3>
+<p>Kerala's landscape is characterized by its lush green forests, which cover around 20% of the state's area. The Western Ghats, a mountain range running parallel to the eastern border, are home to dense tropical rainforests and are a UNESCO World Heritage Site. Major forest areas include the Periyar Wildlife Sanctuary, Wayanad Wildlife Sanctuary, and Silent Valley National Park.</p>
+<h3 class="f">River's</h3>
+<p>Kerala is crisscrossed by 44 rivers, primarily originating from the Western Ghats. Notable rivers include the Periyar, which is the longest river in Kerala, as well as the Bharathapuzha, Pamba, and Kabini rivers. These rivers play a crucial role in the state’s agriculture and provide vital water resources.</p>
+<h3 class="f">Costal area's</h3>
+<p>Kerala has a long coastline stretching about 580 kilometers (360 miles) along the Arabian Sea. This coastal area is dotted with beautiful beaches, backwaters, and lagoons, which are a major attraction for tourists. Prominent beaches include Kovalam, Varkala, and Alappuzha, while the backwaters are famously navigated by houseboats in areas like Alleppey (Alappuzha) and Kumarakom.</p>
+<h3 class="f">Backwater's</h3>
+<p>Kerala's backwaters are a unique and enchanting network of interconnected canals, rivers, lakes, and lagoons. These serene and picturesque waterways span over 900 kilometers along the coastal region of the state, providing a tranquil escape into nature. <br>
+    The Kerala backwaters are a network of brackish lagoons and canals lying parallel to the Arabian Sea of the Malabar coast of Kerala state in south-western India. It also includes interconnected lakes, rivers, and inlets, a labyrinthine system formed by more than 900 km (560 mi) of waterways, and sometimes compared to bayous. The network includes five large lakes linked by canals, both man made and natural, fed by 38 rivers, and extending virtually half the length of Kerala state. The backwaters were formed by the action of waves and shore currents creating low barrier islands across the mouths of the many rivers flowing down from the Western Ghats range. In the midst of this landscape there are a number of towns and cities, which serve as the starting and end points of backwater cruises. <br>
+     There are 34 backwaters in Kerala. Out of it, 27 are located either closer to Arabian Sea or parallel to the sea. The remaining 7 are inland navigation routes. <br>
+
+    The backwaters have a unique ecosystem: freshwater from the rivers meets the seawater from the Arabian Sea. A barrage has been built near Thanneermukkom, so salt water from the sea is prevented from entering the deep inside, keeping the fresh water intact. Such fresh water is extensively used for irrigation purposes. Many unique species of aquatic life including crabs, frogs and mudskippers, water birds such as terns, kingfishers, darters and cormorants, and animals such as otters and turtles live in and alongside the backwaters. Palm trees, pandanus shrubs, various leafy plants, and bushes grow alongside the backwaters, providing a green hue to the surrounding landscape.</p>
+<h3 class="f">Climates's</h3>
+<p>Kerala experiences a tropical monsoon climate, characterized by high humidity and significant rainfall. The state has three distinct seasons: <br><br>
+    <strong>Monsoon </strong>(June to September):  The southwest monsoon brings heavy rains, which are crucial for replenishing water resources and supporting agriculture. <br>
+   <strong>Post-Monsoon  </strong>(October to November): This period is marked by lighter rains and relatively cooler temperatures. <br>
+  <strong> Dry Season</strong> (December to May):  The weather is generally warm and dry, with temperatures ranging from 25°C to 35°C (77°F to 95°F). The northeastern monsoon in October and November also contributes to the rainfall in this season.</p></div>
+<div class="section" >
+            <h2>Photo Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="Kathakali_1125.jpg" alt="Photo 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="theyyam.JPG" alt="Photo 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="vezhambal.jpg" alt="Photo 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="yoga.avif" alt="Photo 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="a2.jpg" alt="Photo 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="a3.jpg" alt="Photo 6">
+                </div>
+                <div class="gallery-item">
+                    <img src="elephant.jpg" alt="Photo 7">
+                </div>
+                <div class="gallery-item">
+                    <img src="aal.jpg" alt="Photo 8">
+                </div>
+                <div class="gallery-item">
+                    <img src="konna.jpg" alt="Photo 9">
+                </div>
+            </div>
+        </div>
+        <div class="section" id="about">
+                <h2>About Us</h2>
+                <p><strong>Kerala Tourism</strong> is the official tourism promotion agency of the Indian state of Kerala. We are dedicated to showcasing the rich cultural heritage, breathtaking natural beauty, and unique experiences that Kerala has to offer. Our mission is to promote Kerala as a premier global tourist destination and provide visitors with authentic and memorable experiences.</p>
+                
+                <h3 style="color: #556e07;">Our Vision</h3>
+                <p>To establish Kerala as a top global tourism destination by highlighting its unparalleled natural beauty, rich cultural traditions, and diverse attractions. We aim to offer visitors an immersive experience that reflects the true essence of "God’s Own Country."</p>
+                
+                <h3 style="color: #556e07;">What We Offer</h3>
+                <ul>
+                    <li><strong>Scenic Beauty:</strong> Explore Kerala's stunning landscapes, from serene backwaters and lush hill stations to pristine beaches and verdant forests.</li>
+                    <li><strong>Cultural Richness:</strong> Experience Kerala’s vibrant culture through traditional festivals, art forms like Kathakali and Theyyam, and historic temples.</li>
+                    <li><strong>Ayurveda and Wellness:</strong> Rejuvenate with authentic Ayurvedic treatments in world-class wellness resorts, promoting holistic health and relaxation.</li>
+                    <li><strong>Adventure and Eco-Tourism:</strong> Enjoy thrilling outdoor activities and eco-tourism adventures in the state's rich biodiversity zones and wildlife sanctuaries.</li>
+                    <li><strong>Culinary Delights:</strong> Savor Kerala’s diverse cuisine, famous for its use of spices and fresh ingredients, offering a gastronomic journey like no other.</li>
+                </ul>
+                
+                <h3 style="color: #556e07;">Our Commitment</h3>
+                <p>We are committed to sustainable tourism practices that preserve and protect Kerala’s natural and cultural assets. By working closely with local communities and stakeholders, we strive to enhance the visitor experience while ensuring that tourism benefits all.</p>
+                
+                <h3 style="color: #556e07;">Our Team</h3>
+                <p>Our team comprises passionate professionals with deep knowledge of Kerala’s tourism landscape. We work tirelessly to provide accurate information, personalized recommendations, and exceptional services to make every visit to Kerala a remarkable one.</p>
+                
+                <h3 style="color: #556e07;">Connect with Us</h3>
+                <p>We invite you to discover the magic of Kerala and create unforgettable memories. For more information, visit our website, follow us on social media, or contact us directly.</p>
+                <p><strong>Email:</strong> keralatourism@gmail.com<br>
+                   <strong>Phone:</strong> +91 0496 253506</p>
+            
+           
+            
+
+        </div>
+        
+        <div class="section" id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need more information, feel free to reach out to us.</p>
+            <p>Email: keralatourism@gmail..com</p>
+            <p>Contact: 0496 253506</p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div style="font-size: 25px; text-align: center; color: white; margin: 0 20px;">
+                <a href="https://www.instagram.com/keralatourism?igsh=MXFteDZ0bWlyb29vMA=="><i style="color: white;" class="fa-brands fa-instagram"></i></a> 
+                <a href=""><i style="color: white;" class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/keralatourismofficial"><i style="color: white;" class="fa-brands fa-facebook"></i></a>
+                <a href="https://youtube.com/@keralatourism?si=wimWcPnZ0K0VYa2U"><i style="color: white;" class="fa-brands fa-youtube"></i></a>
+                <a href=""><i style="color: white;" class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div><p>&copy; 2024 Kerala Tourism. All rights reserved.</p></div>
+        </div>
+    </footer>
+</body>
+</html>
